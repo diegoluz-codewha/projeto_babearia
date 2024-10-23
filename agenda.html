@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia - Agenda</title>
+    <link rel="stylesheet" href="log_casd.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agenda da Barbearia</h1>
+
+        <div class="agenda-section">
+            <!-- Seletor de Barbeiros -->
+            <label for="barber">Escolha o barbeiro:</label>
+            <select id="barber">
+                <option value="none">Selecione um barbeiro</option>
+                <option value="barber1">Carlos</option>
+                <option value="barber2">João</option>
+                <option value="barber3">Pedro</option>
+            </select>
+
+            <!-- Data -->
+            <label for="date">Escolha a data:</label>
+            <input type="date" id="date" required>
+
+            <!-- Mostrar horários disponíveis -->
+            <button id="check-availability-btn">Verificar Disponibilidade</button>
+
+            <!-- Tabela de horários disponíveis -->
+            <div id="availability-table" class="hidden">
+                <h2>Horários Disponíveis</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Disponibilidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="available-times"></tbody>
+                </table>
+            </div>
+
+            <!-- Botão para agendar -->
+            <div id="schedule-section" class="hidden">
+                <button id="schedule-btn">Agendar</button>
+                <p id="schedule-confirmation" class="success"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
