@@ -121,6 +121,95 @@ hr{
     border-color: #D4AF37;
     width: 100%;
 }
+
+/* SEÇÃO DO CARROUSEL */
+.SLIDER, .carousel {
+    position: relative;
+    background-color: aqua;
+    width: 100%; /* Ocupa toda a largura da página */
+    height: 30vh; /* Ocupa metade da altura da página */
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo dentro do carrossel */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+    .slides {
+        display: flex;
+        width: 100%;
+        height: 100%; /* O carrossel também precisa ocupar toda a altura do contêiner */
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .slide {
+        width: 100%; /* Cada slide ocupa 100% da largura disponível */
+        flex-shrink: 0;
+        height: 100%; /* Cada slide deve ocupar toda a altura do carrossel */
+    }
+    
+    .slide img {
+        width: 100%;
+        height: 100%; /* Imagem ocupa toda a altura e largura */
+        object-fit: cover; /* A imagem cobre o espaço sem distorcer */
+    }
+    
+    input[type="radio"] {
+        display: none;
+    }
+    
+    #slide1:checked ~ .slides {
+        transform: translateX(0);
+    }
+    
+    #slide2:checked ~ .slides {
+        transform: translateX(-100%);
+    }
+    
+    #slide3:checked ~ .slides {
+        transform: translateX(-200%);
+    }
+    
+    /* Navegação */
+    .navigation {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+    
+    .navigation label {
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+        margin: 5px 5px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+    }
+    
+    input[type="radio"]:checked + label {
+        background-color: #fff;
+    }
+    
+    /* Responsividade para mobile */
+    @media (max-width: 768px) {
+        .carousel {
+        max-width: 800px;
+        }
+        .slide img {
+        max-height: 450px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .carousel {
+        max-width: 600px;
+        }
+        .slide img {
+        max-height: 400px;
+        }
+    }
 /* Seção de serviços */
 #services {
     padding: 50px;
