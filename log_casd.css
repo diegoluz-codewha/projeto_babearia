@@ -106,7 +106,14 @@ th {
 td {
     background-color: #f9f9f9;
 }
-
+p{  
+    color: #f9f9f9;
+    text-decoration: none;
+}
+a{  
+    color: #f9f9f9;
+    text-decoration: none;
+}
 td:last-child {
     font-weight: 600;
     color: #28a745;
@@ -116,4 +123,57 @@ td:last-child {
     .container {
         padding: 20px;
     }
+}
+.remember-me{
+    display: block;
+    margin-left: 320px;
+    color:#ffff; /* Cor do texto */
+}
+
+.remember-me label {
+    display: block;
+}
+
+#forgot-password {
+    display: inline-block; /* Para que o link seja um bloco */
+    margin-top: 10px; /* Espaço acima do link */
+    color:#ffff; /* Cor do texto */
+    text-decoration: underline; /* Subtração para indicar um link */
+    cursor: pointer; /* Muda o cursor ao passar sobre o link */
+
+}
+
+#forgot-password:hover {
+    text-decoration: none; /* Remove a subtração ao passar o mouse */
+}
+/* seção de esqueci_senha */
+.reset-section {
+    margin-top: 20px;
+    
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
 }

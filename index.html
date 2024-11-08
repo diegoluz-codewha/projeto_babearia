@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbearia</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=" defer></script> <!-- Link para a API do Google Maps -->
 </head>
 <body>
     <!-- Cabeçalho com Menu Responsivo -->
@@ -15,7 +16,7 @@
             </div>
             <div class="navbar-menu" id="navbar-menu">
                 <ul>
-                    <li><a href="test.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#contato">Contato</a></li>
@@ -69,30 +70,93 @@
         </div>
     </section>
     <hr>
-    <section id="services">
+        <!-- Seção Serviços -->
+        <section id="services">
         <h2>Nossos Serviços</h2>
         <div class="service-cards">
-            <div class="card">
+            <div class="card" data-service="corte">
                 <h3>Corte de Cabelo</h3>
                 <p>Cortes modernos e clássicos.</p>
             </div>
-            <div class="card">
+            <div class="card" data-service="barba">
                 <h3>Barba</h3>
                 <p>Barbas desenhadas com perfeição.</p>
             </div>
-            <div class="card">
+            <div class="card" data-service="tratamento">
                 <h3>Tratamento Facial</h3>
                 <p>Tratamentos relaxantes e revigorantes.</p>
             </div>
         </div>
+
+        <div id="service-details" class="service-details">
+            <div id="corte" class="service-info" style="display: none;">
+                <h3>Detalhes do Corte de Cabelo</h3>
+                <div class="image-description">
+                    <img src="imagens/processo de corte moderno.jpg" alt="Corte de Cabelo Moderno" class="service-image">
+                    <div class="description">
+                        <p><strong>Corte Moderno:</strong> O corte moderno envolve técnicas inovadoras que valorizam o formato do rosto e o estilo pessoal do cliente.</p>
+                        <p>Usamos ferramentas de precisão para criar linhas limpas e texturas dinâmicas.</p>
+                    </div>
+                </div>
+                <div class="image-description">
+                    <img src="imagens/processo de corte clássico.jpg" alt="Corte de Cabelo Clássico" class="service-image">
+                    <div class="description">
+                        <p><strong>Corte Clássico:</strong> O corte clássico é um estilo atemporal que se concentra em formas e silhuetas tradicionais.</p>
+                        <p>Garante um visual sofisticado e fácil de manter.</p>
+                    </div>
+                </div>
+                <div class="image-description">
+                    <img src="imagens/sobre a finalização e styling do cabelo.jpg" alt="Finalização e Styling" class="service-image">
+                    <div class="description">
+                        <p><strong>Finalização e Styling:</strong> Ao final, oferecemos um serviço de finalização e styling.</p>
+                        <p>Utilizamos produtos de alta qualidade e compartilhamos dicas para manter o estilo em casa.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="barba" class="service-info"style="display: none;">
+                <h3>Detalhes da Barba</h3>
+                <div class="image-description">
+                    <img src="barba1.jpg" alt="Barba 1" class="service-image">
+                    <p>Descrição do processo de desenho de barba 1.</p>
+                </div>
+                <div class="image-description">
+                    <img src="barba2.jpg" alt="Barba 2" class="service-image">
+                    <p>Descrição do processo de desenho de barba 2.</p>
+                </div>
+                <div class="image-description">
+                    <img src="barba3.jpg" alt="Barba 3" class="service-image">
+                    <p>Descrição do acabamento e cuidados com a barba.</p>
+                </div>
+            </div>
+            <div id="tratamento" class="service-info"style="display: none;">
+                <h3>Detalhes do Tratamento Facial</h3>
+                <div class="image-description">
+                    <img src="tratamento1.jpg" alt="Tratamento Facial 1" class="service-image">
+                    <p>Descrição do processo de limpeza facial.</p>
+                </div>
+                <div class="image-description">
+                    <img src="tratamento2.jpg" alt="Tratamento Facial 2" class="service-image">
+                    <p>Descrição do processo de esfoliação facial.</p>
+                </div>
+                <div class="image-description">
+                    <img src="tratamento3.jpg" alt="Tratamento Facial 3" class="service-image">
+                    <p>Descrição do processo de hidratação facial.</p>
+                </div>
+            </div>
+        </div>
+            <br><br>
+        <a href="agenda.html" class="btn-primary">Agendar Agora</a>
     </section>
 
     <!-- Seção Sobre -->
     <section class="about" id="sobre">
         <h2>Sobre Nossa Barbearia</h2>
         <p>Nossa barbearia oferece serviços de alta qualidade com profissionais experientes. O ambiente é descontraído e acolhedor, garantindo que você tenha um momento de relaxamento enquanto cuida da sua aparência.</p>
-        <img src="imagem/barbearia-por-assinatura-belo-horizonte.jpg" alt="Ferramentas de Barbearia">
+        
     </section>
+
+        <!-- Mapa -->
+        <div id="map" ></div>
 
     <!-- Rodapé -->
     <footer id="contato">
@@ -107,5 +171,6 @@
     </footer>
 
     <script src="hamburger.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

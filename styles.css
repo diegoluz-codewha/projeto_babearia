@@ -211,36 +211,119 @@ hr{
         }
     }
 /* Seção de serviços */
+/* Estilos gerais da seção de serviços */
 #services {
-    padding: 50px;
-    background-color: #1C1F2B; /* Tom de Azul Escuro Mais Claro */
+    padding: 10px 40px;
+    background-color: #1C1F2B;
     text-align: center;
 }
 
 #services h2 {
-    color: #D4AF37; /* Dourado */
+    color: #D4AF37;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .service-cards {
     display: flex;
     justify-content: space-around;
+    gap: 20px; /* Espaço entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem linha */
     margin-top: 30px;
 }
 
 .card {
-    background-color: #0A0B14; /* Azul Escuro */
+    background-color: #0A0B14;
     padding: 20px;
-    width: 30%;
-    border: 2px solid #D4AF37; /* Borda Dourada */
+    width: 30%; /* Largura ajustável para permitir 3 cards em linha */
+    max-width: 300px; /* Largura máxima para os cards */
+    border: 2px solid #D4AF37;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    cursor: pointer;
+    transition: transform 0.3s; /* Efeito de transição */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .service-cards {
+        justify-content: center;
+    }
+    .card {
+        width: 45%; /* Dois cards por linha em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 80%; /* Um card por linha em telas pequenas */
+        margin-bottom: 20px;
+    }
 }
 
 .card h3 {
     margin-bottom: 10px;
     color: #D4AF37; /* Dourado */
 }
+
+.service-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image-description {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    transition: transform 0.3s; /* Efeito de transição suave */
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.image-description:hover {
+    transform: scale(1.02);
+}
+
+.service-image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+.service-image:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+    max-width: 600px;
+}
+
+.description p {
+    margin: 0 0 10px;
+}
+
+.description p strong {
+    font-weight: bold;
+}
+
+
 
 /* Seção Sobre */
 .about {
@@ -265,6 +348,14 @@ hr{
     margin-top: 20px;
     border-radius: 10px;
 }
+
+/* Estilos para o mapa */
+#map{
+    height: 400px;  /* Altura do mapa */
+    width: 100%;   /* Largura total */
+    ;
+}
+
 
 /* Rodapé */
 footer {

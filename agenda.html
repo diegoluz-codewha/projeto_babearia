@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="log_casd.css">
 </head>
 <body>
+
     <div class="container">
         <h1>Agenda da Barbearia</h1>
 
@@ -30,15 +31,11 @@
             <!-- Tabela de horários disponíveis -->
             <div id="availability-table" class="hidden">
                 <h2>Horários Disponíveis</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Horário</th>
-                            <th>Disponibilidade</th>
-                        </tr>
-                    </thead>
-                    <tbody id="available-times"></tbody>
-                </table>
+                <select id="available-times-select">
+                    <option value="none">Selecione um horário</option>
+                </select>
+                <p id="availability-message"></p>
+                <button id="select-time-btn" class="hidden">Selecionar Horário</button>
             </div>
 
             <!-- Botão para agendar -->
@@ -46,9 +43,28 @@
                 <button id="schedule-btn">Agendar</button>
                 <p id="schedule-confirmation" class="success"></p>
             </div>
+
+            <!-- Seção para Reagendar -->
+            <div id="reschedule-section">
+                <h2>Reagendar Agendamento</h2>
+                <select id="existing-appointments">
+                    <option value="none">Selecione um agendamento existente</option>
+                    <!-- Adicione opções de agendamentos aqui -->
+                </select>
+                <button id="load-appointment-btn" class="hidden">Carregar Detalhes</button>
+            </div>
+
+            <!-- Detalhes do agendamento existente -->
+            <div id="loaded-appointment" class="hidden">
+                <h3>Detalhes do Agendamento</h3>
+                <p id="appointment-details"></p>
+                <button id="reschedule-btn">Reagendar</button>
+            </div>
+            <button id="confirm-return">Voltar ao Site</button>
         </div>
     </div>
 
     <script src="main.js"></script>
 </body>
 </html>
+
